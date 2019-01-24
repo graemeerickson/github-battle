@@ -1,6 +1,6 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
-require('index.css');
+require('./index.css');
 
 /*
   Component parts:
@@ -23,4 +23,6 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(
+  <App />, document.getElementById('app')
+)
