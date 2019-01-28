@@ -5,6 +5,7 @@ const Router = ReactRouter.BrowserRouter;
 const Route = ReactRouter.Route;
 const Nav = require('./Nav');
 const Home = require('./Home');
+const Battle = require('./Battle');
 /*
   Component parts:
     (1) state (optional)
@@ -23,6 +24,7 @@ class App extends React.Component {
         <div className='container'>
           <Nav />
           <Route exact path='/' component={Home} />
+          <Route exact path='/battle' component={Battle} />
           <Route path='/popular' component={Popular} />
         </div>
       </Router>
