@@ -10,6 +10,11 @@ li {
   list-style-type: none;
 }
 
+a {
+  color: #d0021b;
+  text-decoration: none;
+}
+
 .container {
   margin: 0 auto;
   max-width: 1200px;
@@ -49,4 +54,16 @@ li {
 .avatar {
   border-radius: 50%;
   width: 150px;
+}
+
+.nav {
+  display: flex;
+}
+
+.active {
+  font-weight: bold;
+}
+
+.nav li {
+  margin-right: 15px;
 }
