@@ -97,6 +97,19 @@ a {
   font-weight: bold;
 }
 
+.reset {
+  background: transparent;
+  border: none;
+  color: #d0021b;
+  display: block;
+  text-align: center;
+  width: 100%;
+}
+
+.reset:hover {
+  cursor: pointer;
+}
+
 .nav li {
   margin-right: 15px;
 }
