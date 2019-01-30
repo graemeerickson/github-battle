@@ -22,7 +22,7 @@ class Results extends React.Component {
       players.playerOneName,
       players.playerTwoName
     ]).then(function(players) {
-      if (players === null) {
+      if (!players) {
         return this.setState(function() {
           return {
             error: 'Looks like there was an error. Check that both users exist on GitHub.',
@@ -48,7 +48,7 @@ class Results extends React.Component {
     const loser = this.state.loser;
     const loading = this.state.loading;
 
-    if (loading === true) {
+    if (loading) {
       return <p>Loading results...</p>
     }
 
