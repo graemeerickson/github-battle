@@ -1,0 +1,15 @@
+App
+  Nav
+  Home
+  Battle
+    PlayerInput
+    PlayerPreview
+    Results
+      utils/api: battle()
+      Player
+        Profile
+          PlayerPreview
+  Popular
+    util/api: fetchPopularRepos()
+    SelectLanguage
+    RepoGrid
