@@ -46,7 +46,7 @@ class Battle extends React.Component {
     return (
       <div>
         <div className="row">
-          {!playerOneName
+          {!playerOneImage
             ? <PlayerInput
                 id='playerOne'
                 label='Player One'
@@ -64,7 +64,7 @@ class Battle extends React.Component {
               </PlayerPreview>
           }
 
-          {!playerTwoName
+          {!playerTwoImage
             ? <PlayerInput
                 id='playerTwo'
                 label='Player Two'
@@ -82,7 +82,7 @@ class Battle extends React.Component {
               </PlayerPreview>
           }
         </div>
-        {playerOneName && playerTwoName && 
+        {playerOneImage && playerTwoImage && 
           <Link
             className='button'
             to={{
