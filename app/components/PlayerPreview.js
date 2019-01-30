@@ -1,7 +1,7 @@
 const React = require('react');
 const PropTypes = require('prop-types');
 
-function PlayerPreview (props) {
+function PlayerPreview(props) {
   return (
     <div>
       <div className='column'>
@@ -12,11 +12,8 @@ function PlayerPreview (props) {
         />
         <h2 className='username'>@{props.username}</h2>
       </div>
-      <button
-        className='reset'
-        onClick={props.onReset.bind(null, props.id)}>
-          Reset
-      </button>
+      {/* expect user details from Profile.js, or Reset button from Battle.js */}
+      {props.children}
     </div>
   )
 }
@@ -24,8 +21,6 @@ function PlayerPreview (props) {
 PlayerPreview.propTypes = {
   avatar: PropTypes.string.isRequired,
   username: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
-  onReset: PropTypes.func.isRequired
 }
 
 module.exports = PlayerPreview;
