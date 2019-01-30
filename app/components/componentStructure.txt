@@ -6,6 +6,7 @@ App
     PlayerPreview
     Results
       utils/api: battle()
+      Loading
       Player
         Profile
           PlayerPreview
@@ -13,3 +14,4 @@ App
     util/api: fetchPopularRepos()
     SelectLanguage
     RepoGrid
+    Loading
