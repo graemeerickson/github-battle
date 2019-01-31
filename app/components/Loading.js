@@ -9,13 +9,19 @@ const styles = {
 }
 
 class Loading extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      speed: props.speed,
-      text: props.text
-    };
-  }
+  static defaultProps = {
+    speed: 300,
+    text: 'Loading',
+  };
+
+  static propTypes = {
+    speed: PropTypes.number.isRequired,
+    text: PropTypes.string.isRequired,
+  };
+
+  state = {
+    text: this.props.text
+  };
 
   componentDidMount = () => {
     const { text, speed } = this.props;
@@ -41,15 +47,5 @@ class Loading extends Component {
     )
   }
 }
-
-Loading.propTypes = {
-  speed: PropTypes.number.isRequired,
-  text: PropTypes.string.isRequired,
-};
-
-Loading.defaultProps = {
-  speed: 300,
-  text: 'Loading',
-};
 
 export default Loading;

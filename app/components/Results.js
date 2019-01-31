@@ -6,14 +6,11 @@ import Player from './Player';
 import queryString from 'query-string';
 
 class Results extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      winner: null,
-      loser: null,
-      error: null,
-      loading: true
-    }
+  state = {
+    winner: null,
+    loser: null,
+    error: null,
+    loading: true
   }
 
   componentDidMount = () => {
