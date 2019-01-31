@@ -2,12 +2,18 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class PlayerInput extends Component {
-  constructor(props) {
-    super(props);
+  static propTypes = {
+    id: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+    onSubmit: PropTypes.func.isRequired,
+  }
 
-    this.state = {
-      username: ''
-    }
+  static defaultProps = {
+    label: 'Username',
+  }
+
+  state = {
+    username: ''
   }
 
   handleChange = event => {
@@ -45,12 +51,6 @@ class PlayerInput extends Component {
       </form>
     )
   }
-}
-
-PlayerInput.propTypes = {
-  id: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
-  onSubmit: PropTypes.func.isRequired,
 }
 
 export default PlayerInput;
