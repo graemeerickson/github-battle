@@ -73,8 +73,12 @@ class Popular extends React.Component {
       repos: null
     }));
 
-    const repos = await fetchPopularRepos(lang)
-    this.setState(() => ({ repos }));
+    try {
+      const repos = await fetchPopularRepos(lang)
+      this.setState(() => ({ repos }));
+    } catch (err) {
+      console.log('error:', err);
+    }
   }
 
   render() {
