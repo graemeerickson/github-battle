@@ -14,38 +14,35 @@ class PlayerInput extends React.Component {
   }
 
   handleChange(event) {
-    let value = event.target.value;
-    this.setState(function () {
-      return {
-        username: value
-      }
-    })
+    const value = event.target.value;
+    this.setState(() => ({ username: value }));
   }
 
   handleSubmit(event) {
     event.preventDefault();
-
     this.props.onSubmit(this.props.id, this.state.username);
   }
 
   render() {
+    const { username } = this.state;
+    const { label } = this.props;
     return (
       <form className='column' onSubmit={this.handleSubmit}>
         <label className='header' htmlFor='username'>
-          {this.props.label}
+          {label}
         </label>
         <input
           id='username'
           placeholder='github username'
           type='text'
           autoComplete='off'
-          value={this.state.username}
+          value={username}
           onChange={this.handleChange}
         />
         <button
           className='button'
           type='submit'
-          disabled={!this.state.username}>
+          disabled={!username}>
           Submit
         </button>
       </form>
