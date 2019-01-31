@@ -1,10 +1,6 @@
 const axios = require('axios');
-require('dotenv').config();
 
-const id = process.env.GITHUB_CLIENT_ID;
-const sec = process.env.GITHUB_SECRET;
-console.log(id);
-const params = '?client_id=' + id + '&client_secret=' + sec;
+const params = '?client_id=' + process.env.REACT_APP_GITHUB_CLIENT_ID + '&client_secret=' + process.env.REACT_APP_GITHUB_SECRET;
 
 function getProfile(username) {
   return axios.get('https://api.github.com/users/' + username + params)
