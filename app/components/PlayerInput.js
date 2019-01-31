@@ -1,7 +1,7 @@
-const React = require('react');
-const PropTypes = require('prop-types');
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
-class PlayerInput extends React.Component {
+class PlayerInput extends Component {
   constructor(props) {
     super(props);
 
@@ -53,4 +53,4 @@ PlayerInput.propTypes = {
   onSubmit: PropTypes.func.isRequired,
 }
 
-module.exports = PlayerInput;
+export default PlayerInput;

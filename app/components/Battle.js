@@ -1,10 +1,10 @@
-const React = require('react');
-const PropTypes = require('prop-types');
-const PlayerInput = require('./PlayerInput');
-const PlayerPreview = require('./PlayerPreview');
-const { Link } = require('react-router-dom');
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import PlayerInput from './PlayerInput';
+import PlayerPreview from './PlayerPreview';
+import PropTypes from 'prop-types';
 
-class Battle extends React.Component {
+class Battle extends Component {
   constructor(props) {
     super(props);
 
@@ -87,4 +87,4 @@ class Battle extends React.Component {
   }
 }
 
-module.exports = Battle;
+export default Battle;
