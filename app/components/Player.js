@@ -2,12 +2,12 @@ const React = require('react');
 const PropTypes = require('prop-types');
 const Profile = require('./Profile');
 
-function Player(props) {
+const Player = ({ label, profile, score }) => {
   return (
     <div>
-      <h1 className='header'>{props.label}</h1>
-      <h3 style={{textAlign: 'center'}}>Score: {props.score}</h3>
-      <Profile info={props.profile} />
+      <h1 className='header'>{label}</h1>
+      <h3 style={{textAlign: 'center'}}>Score: {score}</h3>
+      <Profile info={profile} />
     </div>
   )
 }
