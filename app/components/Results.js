@@ -34,7 +34,7 @@ class Results extends React.Component {
           loser: players[1],
           loading: false
         }));
-      };
+      })
   }
 
   render() {
