@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 
 module.exports = {
-  entry: ['@babel/polyfill', './app/index.js'],
+  entry: ['@babel/polyfill', '@babel/plugin-proposal-class-properties', './app/index.js'],
   output: {
     filename: 'index_bundle.js',
     path: path.resolve(__dirname, 'dist'),
