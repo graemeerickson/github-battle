@@ -5,15 +5,11 @@ import PlayerPreview from './PlayerPreview';
 import PropTypes from 'prop-types';
 
 class Battle extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      playerOneName: '',
-      playerTwoName: '',
-      playerOneImage: null,
-      playerTwoImage: null
-    }
+  state = {
+    playerOneName: '',
+    playerTwoName: '',
+    playerOneImage: null,
+    playerTwoImage: null
   }
 
   handleSubmit = (id, username) => {
