@@ -1,16 +1,17 @@
-import axios from 'axios';
-
 const params = `?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_SECRET}`;
 
 const getProfile = async username => {
-  const profile = await axios.get(`https://api.github.com/users/${username}${params}`);
-  return profile.data;
+  const response = await fetch(`https://api.github.com/users/${username}${params}`);
+  return response.json();
 }
 
-const getRepos = username => axios.get(`https://api.github.com/users/${username}/repos${params}&per_page=100`);
+const getRepos = async username => {
+  const response = await fetch(`https://api.github.com/users/${username}/repos${params}&per_page=100`);
+  return response.json();
+}
 
 const getStarCount = repos => {
-  return repos.data.reduce((count, { stargazers_count }) => count + stargazers_count, 0);
+  return repos.reduce((count, { stargazers_count }) => count + stargazers_count, 0);
 }
 
 const calculateScore = ({ followers }, repos) => {
@@ -51,8 +52,9 @@ export async function fetchPopularRepos(language) {
   const encodedURI = window.encodeURI(`https://api.github.com/search/repositories?q=stars:>1+language:${language}&sort=stars&order=desc&type=Repositories`);
 
   try {
-    const repos = await axios.get(encodedURI);
-    return repos.data.items;
+    const response = await fetch(encodedURI);
+    const repos = await response.json();
+    return repos.items;
   } catch (err) {
     handleError(err);
   }
